@@ -1,3 +1,5 @@
+#@TODO: need to verify a number is entered, also try and use methods for clarity
+
 puts "Enter a credit card number."
 card_num = gets.to_s.gsub(/\s+/, "")
 
