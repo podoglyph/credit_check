@@ -1,6 +1,7 @@
 require 'pry'
 
-card_num = "342801633855673"
+puts "Enter a credit card number."
+card_num = gets.to_s.gsub(/\s+/, "")
 
 #determine index range
 num_length = card_num.length
