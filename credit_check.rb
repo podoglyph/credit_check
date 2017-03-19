@@ -1,5 +1,3 @@
-require 'pry'
-
 puts "Enter a credit card number."
 card_num = gets.to_s.gsub(/\s+/, "")
 
@@ -18,7 +16,9 @@ num_set_two_digit = []
 singles_set = []
 
 #extract numbers and multiply
-num_range_extract.step(2).each { |index| num_set.push(card_num[index].to_i * 2)  }
+num_range_extract.step(2).each do |index|
+  num_set.push(card_num[index].to_i * 2)
+end
 
 #select double digit numbers
 num_set_two_digit = num_set.select { |x| x > 9 }
@@ -32,7 +32,9 @@ num_set_two_digit.map! { |x| x[0].to_i + x[1].to_i }
 doubles_set = num_set + num_set_two_digit
 
 #grab the numbers still remaining from the original card number
-num_range_remain.step(2).each { |index| singles_set.push(card_num[index].to_i)  }
+num_range_remain.step(2).each do |index|
+  singles_set.push(card_num[index].to_i)
+end
 
 #merge and sum the sets
 all_digits = singles_set + doubles_set
